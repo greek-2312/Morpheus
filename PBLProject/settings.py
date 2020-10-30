@@ -25,7 +25,7 @@ SECRET_KEY = '1uktb=^_hixjw-+(a_h18a_9o+^nnujhqw$hd&g$64$d_fc_8('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pblproject.herokuapp.com']
 
 
 # Application definition
