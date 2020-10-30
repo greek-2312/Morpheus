@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <title>Morpheus</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="{% static 'css/update-page.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Sansita&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-update">
+        <div class="header-update">
+            <h1>
+                Information about me</h1>
+        </div>
+        <div class="container-form">
+            <form>
+                {% csrf_token %}
+
+                <div class="gender">
+                    <h2>Gender</h2>
+                    <div>
+                        <input type="radio" id="male" name="gender" value="male" oninput="saveInfo()">
+                        <label for="male">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="female" name="gender" value="female" oninput="saveInfo()">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+
+                <div class="weight">
+                    <h2>Weight</h2>
+                    <input type="number" id="weight" name="weight" min="1" max="500" oninput="saveInfo()">kg
+                </div>
+
+                <div class="height">
+                    <h2>Height</h2><input type="number" id="height" name="height" min="30" max="250" oninput="saveInfo()">cm
+                </div>
+                <div class="region">
+                    <h2>Region</h2><input id="region" name="region" type="text" oninput="saveInfo()">
+                </div>
+                <div class="disease">
+                    <h2>Disease which could affect sleeping</h2>
+                    <input type="checkbox" name="disease" value="disease">
+                    <label for="disease">Disease</label><br>
+                    <input type="checkbox" name="disease" value="disease">
+                    <label for="disease">Disease</label><br>
+                    <input type="checkbox" name="disease" value="disease">
+                    <label for="disease">Disease</label><br>
+                    <input type="checkbox" name="disease" value="disease">
+                    <label for="disease">Disease</label>
+                </div>
+                <div id="save-submit">
+                <input type="submit" id="save-submit-button"  value="Save">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

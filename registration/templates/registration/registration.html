@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Morpheus</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/Register.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Sansita&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="Register">
+        <div class="container-register">
+          <h1 class="register-title">Sign up</h1>
+          <div class="register-div">
+            <form class="register-form" method="post">
+				{% csrf_token %}
+
+              <div class="names">
+              <label>
+                <input type="text" name="firstName" placeholder="First Name" />
+              </label>
+              <label>
+                <input type="text" name="lastName" placeholder="Last Name" />
+              </label>
+              </div>
+              <label>
+                <input type="email" name="email" placeholder="Email" />
+              </label>
+              <label>
+                <input type="date" name="birthDate" min="1920-01-01" max="2020-12-12"/>
+              </label>
+              <label>
+                <input type="text" name="password" placeholder="Create password" />
+              </label>
+              <label>
+                <input type="text" name="passwordConfirm" placeholder="Confirm password" />
+              </label>
+              <input type="submit" value="Create your account" />
+            </form>
+            <div class="sign-up-google">
+              or
+              <div ><img src="{% static 'images/google-icon.png' %}"></img> Sign up with Google</div>
+              </div>
+          </div>
+
+        </div>
+      </div>
+</body>
+
+</html>

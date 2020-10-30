@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Morpheus</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/frontpage.css' %}"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis&family=Sansita:ital,wght@1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="front-page">
+      <form>{% csrf_token %}</form>
+      <div class="hero-section">
+        <div class="header-hero-section">
+          <h1>Let us take care of your sleep</h1>
+        </div>
+      </div>
+      <div class="problem-container">
+        <h2>What is the problem?</h2>
+        <div class="boxes">
+          <div class="image-description">
+            <img src="{% static 'images/donut-chart 2.png' %}" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+              ultrices metus eu mi ultrices, a convallis tellus malesuada. Fusce
+              vitae.
+            </p>
+          </div>
+          <div class="image-description">
+            <img src="{% static 'images/donut-chart 2.png' %}" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+              ultrices metus eu mi ultrices, a convallis tellus malesuada. Fusce
+              vitae.
+            </p>
+          </div>
+          <div class="image-description">
+            <img src="{% static 'images/donut-chart 2.png' %}" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+              ultrices metus eu mi ultrices, a convallis tellus malesuada. Fusce
+              vitae.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="solution-section">
+        <div class="solution-text-box">
+          <h2>
+            A better sleep schedule
+            may help
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+            ultrices metus eu mi ultrices, a convallis tellus malesuada. Fusce
+            vitae.
+          </p>
+        </div>
+      </div>
+      <div class="features-container">
+        <h2>Why us?</h2>
+        <div class="boxes">
+          <div class="image-description">
+            <img src="{% static 'images/calendar.png' %}" />
+            <h3>Integrated with your calendar</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+              ultrices metus eu mi ultrices, a convallis tellus malesuada. Fusce
+              vitae.
+            </p>
+          </div>
+          <div class="image-description">
+            <img src="{% static 'images/people 1.png' %}" />
+            <h3>Personalized</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+              ultrices metus eu mi ultrices, a convallis tellus malesuada. Fusce
+              vitae.
+            </p>
+          </div>
+          <div class="image-description">
+            <img src="{% static 'images/hand 1.png' %}" />
+            <h3>Easy to use</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+              ultrices metus eu mi ultrices, a convallis tellus malesuada. Fusce
+              vitae.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="feedback-section">
+        <h2>They choose to sleep well</h2>
+        <div id="slider">
+          <input type="radio" name="slider" id="slide1" checked />
+          <input type="radio" name="slider" id="slide2" />
+          <input type="radio" name="slider" id="slide3" />
+          <input type="radio" name="slider" id="slide4" />
+          <div class="feedback-container">
+            <div class="person-photo">
+              <img src="{% static 'images/profil_test 1.png' %}" />
+            </div>
+            <div class="person-feedback">
+              <h2>Păpăluță Vasile</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                ultrices metus eu mi ultrices, a convallis tellus malesuada.
+                Fusce vitae.
+              </p>
+            </div>
+          </div>
+          <div id="controls">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+            <label for="slide4"></label>
+          </div>
+          <div id="bullets">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+            <label for="slide4"></label>
+          </div>
+        </div>
+      </div>
+      <div class="try-now">
+        <h2>Wish to sleep as good as them?</h2>
+        <button class="try-now-button">Try now</button>
+      </div>
+    </div>
+  </body>
+</html>
