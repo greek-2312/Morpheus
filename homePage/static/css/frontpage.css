@@ -12,6 +12,7 @@
 }
 
 .hero-section {
+
   padding-top: 15px;
   height: 100vh;
   max-height: 1200px;
@@ -70,7 +71,7 @@
   height: 500px;
   background: #c0d8f0;
   {% load static %}
-  background-image: url("{% static '/images/clock_1.png' %}");
+  background-image: url("../images/clock_1.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
