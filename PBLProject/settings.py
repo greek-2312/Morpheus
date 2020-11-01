@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'registration.apps.RegisterConfig',
     'registration.templates',
-    'homePage.apps',
+    'homePage',
     # 'updatePage',
 ]
 
@@ -74,6 +74,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'PBLProject.wsgi.application'
 
+AUTH_USER_MODEL = 'registration.user_model'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -118,7 +119,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-DATE_INPUT_FORMATS = ['%d/%m/%Y']
+DATE_INPUT_FORMATS = ['yyyy%-mm%-dd%']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
