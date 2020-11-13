@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from datetime import date
+from django.contrib.auth.models import PermissionsMixin
 
 
 class MyAccountManager(BaseUserManager):
@@ -13,6 +14,11 @@ class MyAccountManager(BaseUserManager):
             email=self.normalize_email(email),
             password=password,
             date=date,
+            # weight=weight,
+            # height=height,
+            # disease=disease,
+            # gender=gender,
+            # region=region,
         )
         user.set_password(password)
         user.save(using=self._db)
@@ -33,7 +39,17 @@ class MyAccountManager(BaseUserManager):
         return user
 
 
-class user_model(AbstractBaseUser):
+# disease = (
+#     ('no disease', ' no disease'),
+#     ('disease2', 'disease2'),
+#     ('disease3', 'disease3'),
+#     ('disease4', 'disease4'),)
+# gender = (
+#     ('M', 'Male'),
+#     ('F', 'Female'),)
+
+
+class user_model(AbstractBaseUser, PermissionsMixin):
     id = models.AutoField(primary_key=True)
     # username = models.CharField(max_length=20, blank=True)
     first_name = models.CharField(max_length=30)
@@ -44,6 +60,13 @@ class user_model(AbstractBaseUser):
     is_admin = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
+
+    # weight = models.FloatField(default=1)
+    # height = models.FloatField(default=1)
+    # gender = models.CharField(max_length=20, choices=gender, default='Male')
+    # disease = models.CharField(max_length=20, choices=disease, default='no disease')
+    # region = models.CharField(max_length=30, default='No place')
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['password', 'first_name', 'last_name', 'date']
 

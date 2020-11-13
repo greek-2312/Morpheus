@@ -3,6 +3,5 @@ from . import views
 
 
 urlpatterns = [
-
-    path('', views.updatePage, name='updatePage'),
+    path("", views.updatePage, name="updatePage"),
 ]

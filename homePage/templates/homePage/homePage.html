@@ -1,10 +1,10 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
   <head>
     <title>Morpheus</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/frontpage.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/frontpage.css' %}" />
     <link
       href="https://fonts.googleapis.com/css2?family=Dosis&family=Sansita:ital,wght@1,800&display=swap"
       rel="stylesheet"
@@ -16,8 +16,9 @@
   </head>
 
   <body>
+    <form method="post">
+      {% csrf_token %}
     <div class="front-page">
-      <form>{% csrf_token %}</form>
       <div class="hero-section">
         <div class="header-hero-section">
           <h1>Let us take care of your sleep</h1>
@@ -133,8 +134,9 @@
       </div>
       <div class="try-now">
         <h2>Wish to sleep as good as them?</h2>
-        <button class="try-now-button" href="registration/">Try now</button>
+        <button class="try-now-button">Try now</button>
       </div>
     </div>
+    </form>
   </body>
 </html>

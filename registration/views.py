@@ -15,7 +15,7 @@ def signup(request):
             email = form.cleaned_data.get('email')
             raw_password = form.cleaned_data.get('password')
             user = authenticate(username=email, password=raw_password)
-            login(request, user)
+            # login(request, user)
             return HttpResponseRedirect('/updatePage')
     else:
         form = SignUpForm()

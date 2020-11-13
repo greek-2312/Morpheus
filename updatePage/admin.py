@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import UserUpdateInfo
+from .models import UpdatePage
 
-
-admin.site.register(UserUpdateInfo)
+admin.site.register(UpdatePage)
 

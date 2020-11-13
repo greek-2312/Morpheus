@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'registration.apps.RegisterConfig',
     'registration.templates',
     'homePage',
-    # 'updatePage',
+    'updatePage.apps.UpdatepageConfig',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
 ROOT_URLCONF = 'PBLProject.urls'

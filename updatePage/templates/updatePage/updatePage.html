@@ -4,7 +4,7 @@
 <head>
     <title>Morpheus</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link rel="stylesheet" href="{% static 'css/update-page.css'%}">
+    <link rel="stylesheet" href="{% static 'css/update-page.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Sansita&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
 </head>
@@ -16,9 +16,8 @@
                 Information about me</h1>
         </div>
         <div class="container-form">
-            <form>
+            <form method="post">
                 {% csrf_token %}
-
                 <div class="gender">
                     <h2>Gender</h2>
                     <div>
