@@ -4,7 +4,7 @@ from .forms import UpdateInfoForm
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 
-def updatePage(request):
+def updatePage_view(request):
     if request.method == 'POST':
         form = UpdateInfoForm(request.POST)
         print(form.errors)
@@ -12,7 +12,7 @@ def updatePage(request):
             form.save()
             # weight = form.cleaned_data('weight')
             # id = form.cleaned_data('id')
-            return HttpResponseRedirect('/homePage')
+            return HttpResponseRedirect('/userPage')
     else:
         form = UpdateInfoForm()
     return render(request, 'updatePage/updatePage.html', {'form': form})

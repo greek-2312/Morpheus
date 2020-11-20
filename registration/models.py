@@ -1,8 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, User
 from datetime import date
 from django.contrib.auth.models import PermissionsMixin
-
+from PBLProject.settings import AUTH_USER_MODEL
 
 class MyAccountManager(BaseUserManager):
     def create_user(self, first_name, last_name, email, date, password):
@@ -50,6 +50,7 @@ class MyAccountManager(BaseUserManager):
 
 
 class user_model(AbstractBaseUser, PermissionsMixin):
+    # user = models.OneToOneField(AUTH_USER_MODEL, on_delete=models.CASCADE)
     id = models.AutoField(primary_key=True)
     # username = models.CharField(max_length=20, blank=True)
     first_name = models.CharField(max_length=30)
@@ -80,3 +81,13 @@ class user_model(AbstractBaseUser, PermissionsMixin):
 
     def has_module_perms(self, app_label):
         return True
+
+    def get_full_name(self):
+        # If the full name is not specified, return email
+        if self.first_name == "" and self.last_name == "":
+            return self.email
+        else:
+            return self.first_name + " " + self.last_name
+
+    get_full_name.short_description = 'name'
+

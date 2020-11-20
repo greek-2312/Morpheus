@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="{% static 'css/adminpanel-user.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sansita&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+  </head>
+
+  <body>
+    <header>
+      <div>Admin Panel</div>
+      <div class="admin-name">Admin's name</div>
+    </header>
+
+    <div id="user-container">
+      <div class="info-user">
+        <h2>Information about user</h2>
+        <div class="grid-full-page">
+          <div class="grid-info-user">
+            <div>Full name</div>
+            <div id="user-name">{{ data.get_full_name }}</div>
+            <div>Date of birth</div>
+            <div id="user-age"> {{data.date | date:'Y-M-d'}} </div>
+            <div>Gender</div>
+            <div id="user-gender">{{ user_data.gender }}</div>
+            <div>Region</div>
+            <div id="user-region">{{ user_data.region }}</div>
+            <div>Height</div>
+            <div id="user-height">{{ user_data.height }}</div>
+            <div>Weight</div>
+            <div id="user-weight">{{ user_data.weight }}</div>
+            <div>Disease</div>
+            <div id="user-disease">{{ user_data.disease }}</div>
+          </div>
+          <div class="plot-container">
+            <div class="plot-size">
+              <h2>Plot name</h2>
+              <div class="plot">
+                <canvas id="line-chart1" width="200" height="100"></canvas>
+              </div>
+            </div>
+            <div class="plot-size">
+              <h2>Plot name</h2>
+              <div class="plot">
+                <canvas id="line-chart2" width="200" height="100"></canvas>
+              </div>
+            </div>
+            <div class="plot-size">
+              <h2>Plot name</h2>
+              <div class="plot">
+                <canvas id="line-chart3" width="200" height="100"></canvas>
+              </div>
+            </div>
+            <div class="plot-size">
+              <h2>Plot name</h2>
+              <div class="plot">
+                <canvas id="line-chart4" width="200" height="100"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="{% static 'JS/Chart.js' %}"></script>
+  <script src="{% static 'JS/adminpanel-user.js' %}"></script>
+</html>

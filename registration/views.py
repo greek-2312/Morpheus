@@ -1,22 +1,64 @@
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 
 
-from .forms import SignUpForm
+from .forms import SignUpForm, AccountAuthenticationForm
 
 
-def signup(request):
+def registration_view(request):
+    context = {}
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         print(form.errors)
         if form.is_valid():
             form.save()
             email = form.cleaned_data.get('email')
-            raw_password = form.cleaned_data.get('password')
+            raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=email, password=raw_password)
-            # login(request, user)
-            return HttpResponseRedirect('/updatePage')
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return HttpResponseRedirect('/updatePage')
+        else:
+            context['signup_form'] = form
     else:
         form = SignUpForm()
-    return render(request, 'registration/registration.html', {'form': form})
+        context['signup_form'] = form
+    return render(request, 'registration/registration.html', context)
+
+
+# Logout function
+def logout_view(request):
+    logout(request)
+    return redirect('login')
+
+
+# Login function
+def login_view(request):
+
+    context = {}
+
+    user = request.user
+    if user.is_authenticated:
+        return redirect('/userPage')
+
+    if request.method == "POST":
+        form = AccountAuthenticationForm(request.POST)
+        print(form.errors)
+        if form.is_valid():
+            email = request.POST['email']
+            password = request.POST['password']
+            user = authenticate(email=email, password=password)
+            if user and user.is_superuser or user.is_staff:
+                login(request, user)
+                return redirect('/adminPage')
+            elif user:
+                login(request, user)
+                return redirect('/userPage')
+
+    else:
+        form = AccountAuthenticationForm()
+
+    context['login_form'] = form
+    return render(request, 'registration/loginPage.html', context)

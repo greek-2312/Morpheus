@@ -3,6 +3,6 @@ from django.http import HttpResponseRedirect
 
 
 def index(request):
-    if request.method == 'POST':
-        return HttpResponseRedirect('/registration')
+    if request.POST:
+        return HttpResponseRedirect('/login')
     return render(request, 'homePage/homePage.html')

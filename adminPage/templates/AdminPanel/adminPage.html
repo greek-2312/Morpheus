@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="{% static 'css/adminpanel.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Sansita&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
+ 
+</head>
+
+<body>
+    <header>
+        <div>Admin Panel</div>
+            <div class="admin-name">Admin's name</div>
+       
+    </header>
+    <form method="post">
+        {% csrf_token %}
+    <div id="admin-panel-container">
+        <div id="admin-panel-header">
+            <h1>Users</h1>
+        </div>
+        <div id="list-users">
+            {% for user in users %}
+            <div class="user-info">
+                <div class="user-name">
+                    <a href="{{ user.id }}">{{ user.get_full_name }}</a>
+                </div>
+                <div class="user-email">
+                    {{ user.email }}
+                </div>
+                <button class="delete-user">
+                    <img src="{% static 'images/close.png' %}">
+                </button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    </form>
+</body>
+
+</html>

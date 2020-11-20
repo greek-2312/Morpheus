@@ -1,0 +1,66 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Dosis', sans-serif;
+}
+header{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding:10px;
+    font-size:1.5em;
+    font-family: 'Sansita', sans-serif;
+    box-shadow: 0px 5px 7px 0px rgba(0,0,0,0.28);
+}
+#list-users{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#admin-panel-container{
+    margin-left:auto;
+    margin-right:auto;
+}
+#admin-panel-header{
+    text-align: center;
+    font-family: 'Sansita', sans-serif;
+}
+#list-users{
+    font-size:1.5em;
+    max-width:2000px;
+    width:100vw;
+}
+.user-info{
+    display:flex;
+    justify-content: space-around;
+    align-content: space-around;
+    background:#c0d8f088;
+    border:solid 1px black;
+    height:70px;
+    padding:10px;
+}
+.user-name,.user-email{
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    text-align:center;
+    width:40%;
+    padding:0;
+    margin:20px;
+}
+.user-name a{
+color:black;
+font-weight:1000;
+}
+.user-name a:hover{
+    text-shadow: 0px 0px #202020;
+}
+.delete-user img{
+    width:1.5em;
+}
+.delete-user{
+    margin:13px;
+    background:transparent;
+    border:none;
+    cursor: pointer;
+}
